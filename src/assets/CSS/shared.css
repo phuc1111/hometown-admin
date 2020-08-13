@@ -1,0 +1,91 @@
+.home-content {
+    display: flex;
+}
+
+.home-content-right {
+    display: flex;
+}
+
+.user {
+    margin: 30px 0 !important;
+}
+
+.home-user {
+    background: rgb(33, 168, 44);
+    border-radius: 15px !important;
+    color: aliceblue;
+    margin: 15px 15px;
+}
+
+.home-user-title {
+    padding-top: 15px;
+}
+
+.home-user-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.home-title {
+    margin: 10px 0;
+    text-align: left;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-data {
+    height: 35px;
+    align-self: center;
+    border-radius: 5px;
+}
+
+thead {
+    background: #3c8dbc !important;
+}
+
+.icon-back {
+    color: #3c8dbc;
+    font-size: 30px;
+}
+
+.icon-delete {
+    color: #a71d1d;
+    font-size: 20px;
+}
+
+.adddepart {
+    margin: 15px;
+    background: #3c8dbc !important;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.toast-header {
+    color: aliceblue !important;
+    background: #3c8dbc !important;
+}
+
+.left-menu1 {
+    padding: 0 !important;
+}
+
+@media only screen and (max-width: 47.249999em) {
+    .left-menu1 {
+        display: none;
+    }
+    .home-user {
+        margin: 10px 35px;
+    }
+}
+
+@media only screen and (min-width: 47.25em) and (max-width: 63.9375em) {}
