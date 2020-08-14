@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <!-- <b-avatar class="avatar"></b-avatar> -->
-    <img src="../../assets/logo.png" alt />
+    
     <b-form-input class="email" v-model="phone" placeholder="phone"></b-form-input>
     <b-form-input
       class="email"
@@ -23,8 +23,8 @@ export default {
   name: "M002Login",
   data() {
     return {
-      phone: "0364097912",
-      password: "0364097912"
+      phone: null,
+      password: null
     };
   },
   methods: {

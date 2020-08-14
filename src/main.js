@@ -29,7 +29,7 @@ const messages = {
     en: enMessage,
 }
 const i18n = new VueI18n({
-    locale: 'en', // set locale
+    locale: 'vn', // set locale
     messages,
     fallbackLocale: 'en',
 })

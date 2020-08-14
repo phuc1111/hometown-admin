@@ -1,7 +1,7 @@
 <template>
   <div class="menu-top">
     <b-navbar toggleable="lg" type="dark" class="test">
-      <b-navbar-brand class="nav-white" href="#">D-staff</b-navbar-brand>
+      <b-navbar-brand class="nav-white" href="#">Hometown Admin</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -13,8 +13,7 @@
             <b-icon icon="bell-fill" class="nav-icon noti"></b-icon>
             <b-avatar variant="secondary" class="nav-icon"></b-avatar>
             <b-nav-item-dropdown class="nav-white" text="Admin" right>
-              <b-dropdown-item href="#">Đăng xuất</b-dropdown-item>
-              <b-dropdown-item href="#">Profile</b-dropdown-item>
+              <b-dropdown-item @click="logout()">Đăng xuất</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-nav-form>
         </b-navbar-nav>
@@ -28,7 +27,13 @@ export default {
   name: "M001Navbar",
   data() {
     return {};
-  }
+  },
+  methods: {
+    logout(){
+      sessionStorage.clear();
+      location.reload()
+    }
+  },
 };
 </script>
 <style>
