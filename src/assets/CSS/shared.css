@@ -61,6 +61,11 @@ thead {
     font-size: 20px;
 }
 
+.icon-check {
+    color: #23ec3efd;
+    font-size: 20px;
+}
+
 .adddepart {
     margin: 15px;
     background: #3c8dbc !important;
@@ -79,10 +84,22 @@ thead {
     padding: 0 !important;
 }
 
+.left-menu1 {
+    width: fit-content;
+}
+
+.content {
+    width: fit-content;
+    max-width: 95vw;
+    width: 100%;
+}
+
+.main-content {
+    padding-left: 10px;
+    width: 100%;
+}
+
 @media only screen and (max-width: 47.249999em) {
-    .left-menu1 {
-        display: none;
-    }
     .home-user {
         margin: 10px 35px;
     }

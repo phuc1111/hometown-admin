@@ -2,10 +2,11 @@
   <div class="home">
     <M001Navbar />
     <div class="home-content">
-      <div class="col-xs-0 col-sm-0 col-md-3 col-lg-3 left-menu1">
+      <div class="left-menu1">
         <M001LeftMenu />
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+      <div class="content">
+        <div class="main-content">
         <div class="home-title">Nhân viên</div>
         <div class="row user">
           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
@@ -68,6 +69,7 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <b-table striped hover :items="items"></b-table>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -174,9 +176,7 @@ export default {
   font-weight: bold;
 }
 @media only screen and (max-width: 47.249999em) {
-  .left-menu1 {
-    display: none;
-  }
+
   .home-user {
     margin: 10px 35px;
   }

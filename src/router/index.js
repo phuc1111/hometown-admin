@@ -56,33 +56,6 @@ const routes = [
         }
     },
     {
-        path: "/m001admin-add-department",
-        name: "M001AdminAddDepart",
-        component: () =>
-            import ( /* webpackChunkName: "M001AdminAddDepart"*/ '@/views/m001admin/m001Department/m001AdminAddDepart'),
-        meta: {
-            requiresAuth: true
-        }
-    },
-    {
-        path: "/m001admin-update-department/:id",
-        name: "M001AdminUpdateDepart",
-        component: () =>
-            import ( /* webpackChunkName: "M001AdminUpdateDepart"*/ '@/views/m001admin/m001Department/m001AdminUpdateDepart'),
-        meta: {
-            requiresAuth: true
-        }
-    },
-    {
-        path: "/m001admin-department",
-        name: "M001AdminDepartment",
-        component: () =>
-            import ( /* webpackChunkName: "M001AdminDepartment"*/ '@/views/m001admin/m001Department/m001AdminDepartment'),
-        meta: {
-            requiresAuth: true
-        }
-    },
-    {
         path: "/m001admin-food",
         name: "M001AdminFood",
         component: () =>

@@ -11,7 +11,7 @@
           <b-nav-form>
             <b-icon icon="envelope" class="nav-icon"></b-icon>
             <b-icon icon="bell-fill" class="nav-icon noti"></b-icon>
-            <b-avatar variant="secondary" class="nav-icon"></b-avatar>
+            
             <b-nav-item-dropdown class="nav-white" text="Admin" right>
               <b-dropdown-item @click="logout()">Đăng xuất</b-dropdown-item>
             </b-nav-item-dropdown>
@@ -50,6 +50,7 @@ export default {
   margin-right: 40px;
 }
 .navbar {
+  height: 50px;
   padding: 0 !important;
   z-index: 15 !important;
 }

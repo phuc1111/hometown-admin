@@ -13,7 +13,12 @@
   text-align: center;
   color: #2c3e50;
 }
-
+.row{
+  margin: 0;
+}
+.table-responsive{
+  padding: 10px;
+}
 #nav {
   padding: 30px;
 

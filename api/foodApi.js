@@ -34,7 +34,7 @@ class FoodDataService {
 
     updateFood(id, data) {
 
-        return axios.patch(`${INSTRUCTOR_API_URL}/${id}`, data, {
+        return axios.patch(`${INSTRUCTOR_API_URL}/update/${id}`, data, {
             headers: {
                 token: token
             }

@@ -2,13 +2,12 @@
   <div class="home">
     <M001Navbar />
     <div class="home-content">
-      <div class="col-xs-0 col-sm-0 col-md-3 col-lg-3 left-menu1">
-        <M001LeftMenu />
+      <div class="left-menu1">
+        <M001LeftMenu/>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <!-- <b-table striped hover :items="items"></b-table> -->
+      <div class="content">
+
+          <div class="main-content">
           
             <h3>Danh sách user </h3>
             <b-table
@@ -63,7 +62,7 @@
               aria-controls="my-table"
             ></b-pagination>
           </div>
-        </div>
+        
       </div>
     </div>
   </div>
@@ -86,6 +85,7 @@ export default {
       perPage: 10,
       currentPage: 1,
       items: [],
+      big: true,
       fields: [
         {
           key: "avatar",
@@ -183,3 +183,17 @@ export default {
   }
 };
 </script>
+<style>
+  .left-menu1{
+    width: fit-content;
+  }
+  .content{
+    width: fit-content;
+    max-width: 95vw;
+    width: 100%;
+  }
+  .main-content{
+    padding: 10px;
+    width: 100%;
+  }
+</style>

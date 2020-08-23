@@ -51,6 +51,7 @@
 
               <template v-slot:cell(action)="data">
                 <b-icon @click="deleteFood(data.item._id, data.item.image_id)" icon="x-circle-fill" class="icon-delete"></b-icon>
+                <b-icon v-if="data.item.isCkeck==false" @click="update(data.item._id)" icon="check-circle-fill" class="icon-check"></b-icon>
                 
               </template>
             </b-table>
@@ -147,7 +148,12 @@ export default {
       this.$router.push({ name: "M001AdminAddUser" });
     },
     update(id) {
-      this.$router.push({ name: "M001AdminUpdateUser", params: { id: id } });
+      FoodDataService.updateFood(id).then((data) => {
+        this.getAllFood();
+      }).catch(err => {
+        console.log(err.response);
+        //this.checkErr(err.response)
+      })
     },
     deleteFood(id, image_id) {
       FoodDataService.deleteFood(id, image_id)
@@ -164,9 +170,10 @@ export default {
         });
     },
     getAllFood() {
+      this.items = [];
       FoodDataService.getAllFood()
         .then(data => {
-            console.log(data);
+          console.log(data);
           data.data.forEach(departs => {
             let depart = new Depart(departs);
             this.items.push(depart);

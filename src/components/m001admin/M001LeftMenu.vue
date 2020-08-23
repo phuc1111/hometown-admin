@@ -1,10 +1,11 @@
 /* eslint-disable */
 <template>
   <div>
-    <!-- <b-icon icon="chevron-double-right" class="show-icon"></b-icon> -->
-    <div class="left-menu">
-      <b-form-input v-model="search" placeholder="Tìm kiếm" class="search"></b-form-input>
-      <div class="left-content">Các tác vụ chính</div>
+    <div v-if="big" class="left-menu">
+      <div class="top-icon">
+        <b-icon @click="changeState()" icon="justify" class="icon"></b-icon>
+      </div>
+     
       <router-link :to="{name: 'Admin_Home'}">
         <div class="left-content">
           <b-icon icon="graph-up" class="left-icon"></b-icon>
@@ -16,19 +17,20 @@
           <div class="left-content">
             <b-icon icon="person-fill" class="left-icon"></b-icon>
             <div class="left-title">Nhân viên</div>
-            <b-icon icon="arrow-down-circle" @click="chaneState()" class="right-icon"></b-icon>
           </div>
         </router-link>
       </div>
       <div class="left">
         <router-link :to="{name: 'M001AdminFood'}">
-          <div class="left-content" @click="changeCate()">
+          <div class="left-content">
             <b-icon icon="subtract" class="left-icon"></b-icon>
             <div class="left-title">Đồ ăn</div>
-            <b-icon icon="arrow-down-circle" class="right-icon"></b-icon>
           </div>
         </router-link>
       </div>
+    </div>
+    <div v-if="!big" @click="changeState()">
+      <b-icon  icon="justify" class="show-icon"></b-icon>
     </div>
   </div>
 </template>
@@ -48,39 +50,13 @@ export default {
       project: false,
       timekeeping: false,
       confession: false,
-      question: false
+      question: false,
+      big: true
     };
   },
   methods: {
-    chaneState() {
-      this.user = !this.user;
-    },
-    changeCate() {
-      this.cate = !this.cate;
-    },
-    changeheal() {
-      this.heal = !this.heal;
-    },
-    changeposition() {
-      this.position = !this.position;
-    },
-    changerecruitment() {
-      this.recruitment = !this.recruitment;
-    },
-    changeactivity() {
-      this.activity = !this.activity;
-    },
-    changeproject() {
-      this.project = !this.project;
-    },
-    changetimekeeping() {
-      this.timekeeping = !this.timekeeping;
-    },
-    changeconfession() {
-      this.confession = !this.confession;
-    },
-    changequestion() {
-      this.question = !this.question;
+    changeState() {
+      this.big = !this.big;
     }
   }
 };
@@ -88,7 +64,7 @@ export default {
 <style>
 .left-menu {
   /* max-width: 300px; */
-  padding: 30px 20px;
+  padding: 0 20px;
   height: 100vh;
   /* position: fixed; */
   background: #1e282c;
@@ -118,6 +94,18 @@ export default {
 }
 .left-icon {
   align-self: center;
+}
+.icon{
+  font-size: 30px;
+  color: #ffffff;
+}
+.show-icon{
+  font-size: 30px;
+  color: #353535;
+  margin: 5px;
+}
+.top-icon{
+  text-align: right;
 }
 .left-title {
   align-content: center;
@@ -159,14 +147,19 @@ export default {
   }
 }
 @media only screen and (max-width: 47.249999em) {
-  .left-menu {
-    /* position: absolute; */
-    display: none;
-    /* padding: 0 !important; */
-    /* transform: translateX(-250px); */
+  .left-title{
+    margin-left: 2px;
+    min-width: 100px;
   }
   .body {
     padding: 0;
+  }
+  .left-content{
+    margin: 0;
+  }
+
+  .left{
+    margin: 3px 0;
   }
 }
 @media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
@@ -178,10 +171,6 @@ export default {
   }
   .right-icon {
     margin-left: 10px;
-  }
-  .left-menu {
-    /* max-width: 300px; */
-    /* padding: 0; */
   }
 }
 </style>

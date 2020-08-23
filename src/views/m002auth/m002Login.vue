@@ -2,16 +2,15 @@
   <div class="login">
     <!-- <b-avatar class="avatar"></b-avatar> -->
     
-    <b-form-input class="email" v-model="phone" placeholder="phone"></b-form-input>
+    <b-form-input class="email" v-model="phone" placeholder="Số điện thoại"></b-form-input>
     <b-form-input
       class="email"
       type="password"
       v-model="password"
       :placeholder="$t('login.password')"
     ></b-form-input>
-    <div class="login-text">
-      <div>{{$t("login.forgot-password")}}</div>
-      <div @click="backToHome()">{{$t("navbar.home")}}</div>
+    <div class="error">
+      <div v-if="error" class="alert-danger">{{error}}</div>
     </div>
     <button @click="login()" type="button" class="btn btn-danger login-bn">{{$t("slide.login")}}</button>
   </div>
@@ -24,7 +23,8 @@ export default {
   data() {
     return {
       phone: null,
-      password: null
+      password: null,
+      error: null,
     };
   },
   methods: {
@@ -32,6 +32,14 @@ export default {
       this.$router.push({ name: "Home" });
     },
     login() {
+      if(!this.phone){
+        this.error = "Vui lòng nhập số điện thoại";
+        return;
+      }
+      if(!this.password){
+        this.error = "Vui lòng thêm mật khẩu";
+        return;
+      }
       var data = {
         phone: this.phone,
         password: this.password
@@ -40,6 +48,8 @@ export default {
         console.log(res);
         sessionStorage.setItem("token", res.data.token);
         this.$router.push({ name: "Admin_Home" });
+      }).catch(err => {
+        console.log(err.response);
       });
       
     }
